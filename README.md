@@ -2,8 +2,9 @@
 
 ## Usage
 
-* one-off: copy the whole file into the developer console and run it
-* to make a bookmark:
+### one-off: 
+* copy the whole file into the developer console and run it
+### to make a bookmark:
  * copy the long line at the top of the file (do not include the two slashes at the start)
  * create a new browser bookmark with this as the URL
  * click on the bookmark whenever you want more tokens (will only work once per day as there is a limit of 500 tokens and 300 xp per day)
