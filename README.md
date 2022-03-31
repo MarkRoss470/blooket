@@ -2,16 +2,25 @@
 
 ## Usage
 
-### one-off: 
-* copy the whole file into the developer console and run it
-### to make a bookmark:
- * copy the long line at the top of the file (do not include the two slashes at the start)
- * create a new browser bookmark with this as the URL
- * click on the bookmark whenever you want more tokens (will only work once per day as there is a limit of 500 tokens and 300 xp per day)
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+This extension is not currently available on Chrome Web Store, so this repo is the only way to download it.
+To install:
+* clone the repo
+* go to chrome://extensions
+* enable developer mode
+* click 'load unpacked'
+* navigate to the cloned repo and select
+To add gold + xp to your account:
+* sign in to blooket and navigate to the dashboard
+* open the extension and click on 'Add tokens'
+To change your own blook in a game:
+* join a game like normal, reaching the blook selection menu
+* open the extension and select a blook
+* click on 'Change blook'
+To change somebody else's blook:
+* join a game like normal, reaching the blook selection menu
+* open the extension and select a blook
+* type the username into the 'Username' field
+* click on 'Change blook'
 
 ## Acknowledgments
 

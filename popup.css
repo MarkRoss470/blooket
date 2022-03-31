@@ -1,0 +1,35 @@
+body{
+	width:300px;
+	height:300px;
+}
+
+button{
+	width:95%;
+	height:50px;
+	color:white;
+	background-color:purple;
+	border-radius:5px;
+	border:none;
+	margin:5px;
+	-webkit-box-shadow:none;
+	-box-shadow:none;
+}
+
+
+input
+{
+	width:45%;
+}
+
+#blooks
+{
+	max-height:300px;
+	overflow-y:auto;
+}
+
+.blookIcon
+{
+	height:30px;
+	padding-right:3px;
+	padding-left:3px;
+}

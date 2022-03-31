@@ -1,0 +1,17 @@
+{	
+  "name": "Blooket Hack",
+  "description": "Lets you do unintended things in blooket",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+  	{
+  		"matches": ["https://dashboard.blooket.com/play*"],
+  		"js": ["changeBlook.js"]
+  	}
+  ]
+}
+
