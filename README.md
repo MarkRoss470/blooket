@@ -9,13 +9,16 @@ To install:
 * enable developer mode
 * click 'load unpacked'
 * navigate to the cloned repo and select
+
 To add gold + xp to your account:
 * sign in to blooket and navigate to the dashboard
 * open the extension and click on 'Add tokens'
+
 To change your own blook in a game:
 * join a game like normal, reaching the blook selection menu
 * open the extension and select a blook
 * click on 'Change blook'
+
 To change somebody else's blook:
 * join a game like normal, reaching the blook selection menu
 * open the extension and select a blook
