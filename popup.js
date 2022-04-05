@@ -6,6 +6,7 @@ let changeBlookButton = document.getElementById("changeblook");
 let blookNameInput = document.getElementById("blookname");
 let usernameInput = document.getElementById("username");
 let blooksDivParent = document.getElementById("blooks");
+let kickButton = document.getElementById("kick");
 
 addTokensButton.addEventListener("click", async () => {
 	let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -36,12 +37,17 @@ async function changeBlook(blook=null)
 	}
 	chrome.tabs.sendMessage(tab.id, {
 		text: "change_blook", 
-		blook: blook || blookNameInput.value, 
+		blook: blook, 
 		username: usernameInput.value == "" ? undefined : usernameInput.value
 	});
 }
 
-changeBlookButton.addEventListener("click", (e) => {changeBlook()});
+changeBlookButton.addEventListener("click", (e) => {changeBlook(blookNameInput.value)});
+
+kickButton.addEventListener("click", (e) => {
+	if(usernameInput.value == "" && !confirm("kick yourself?"))return;
+	changeBlook(null);
+});
 
 function loadBlooks(){
 	let blooksDiv = document.createElement("div");
