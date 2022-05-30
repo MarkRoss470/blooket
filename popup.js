@@ -1,6 +1,7 @@
 import {addTokens} from "./addTokens.js";
 import {allBlooks} from "./blooks.js";
 
+
 let addTokensButton = document.getElementById("addtokens");
 let changeBlookButton = document.getElementById("changeblook");
 let blookNameInput = document.getElementById("blookname");
