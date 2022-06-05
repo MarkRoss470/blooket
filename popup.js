@@ -58,6 +58,7 @@ function loadBlooks(){
 		blookIcon.id = "blookicon-" + blookname;
 		blookIcon.setAttribute("src", allBlooks[blookname]);
 		blookIcon.setAttribute("class", "blookIcon");
+		blookIcon.setAttribute("loading", "lazy");
 		blookIcon.addEventListener("click", (e) => {
 			blookIcon.style['background-color'] = "purple";
 			try
@@ -72,6 +73,6 @@ function loadBlooks(){
 	}
 	blooksDivParent.appendChild(blooksDiv);
 }
-setTimeout(loadBlooks);
+requestIdleCallback(loadBlooks);
 
 
