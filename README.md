@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-## Usage
+## Installation
 
 This extension is not currently available on Chrome Web Store, so this repo is the only way to download it.
 To install:
@@ -9,6 +9,8 @@ To install:
 * enable developer mode
 * click 'load unpacked'
 * navigate to the cloned repo and select
+
+## Usage
 
 To add gold + xp to your account:
 * sign in to blooket and navigate to the dashboard
