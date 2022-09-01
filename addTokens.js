@@ -24,22 +24,6 @@ export async function addTokens() {
 		iframe.remove();
 	}
 
-	//fetches user info from endpoint /api/users/verify-token
-	//used for name field of payload
-	async function getUserInfo() {
-		console.log("Getting user info");
-		const response = await fetch('https://api.blooket.com/api/users/verify-token', {
-			method: "GET",
-			headers: {
-				"accept": "application/json, text/plain, */*",
-				"accept-language": "en-US,en;q=0.9,ru;q=0.8",
-			},
-			credentials: "include"
-		});
-		console.log("Got user info");
-		return await response.json();
-	};
-
 	//fetches daily reward info from endpoint /api/users/bonuses
 	//used for addedTokens and addedXp fields of payload (so that the program does not request more than the quotas per day)
 	async function getRewardInfo() {
@@ -54,12 +38,9 @@ export async function addTokens() {
 		return await response.json();
 	};
 
-
-	let data = await getUserInfo();
 	let rewardData = await getRewardInfo();
-
 	
-	if(data.name == undefined || rewardData.tokensAvailable == undefined || rewardData.xpAvailable == undefined)
+	if(rewardData.tokensAvailable == undefined || rewardData.xpAvailable == undefined)
 	{
 		customAlert("Error collecting user info");
 		return;
@@ -73,7 +54,6 @@ export async function addTokens() {
 	}
 	
 	let JSONBody = {
-		name:data.name,
 		addedTokens:rewardData.tokensAvailable,
 		//addedTokens:10,
 		addedXp:rewardData.xpAvailable
@@ -84,7 +64,7 @@ export async function addTokens() {
 	//this key string is taken from the blooket js source code
 	//I believe this changes with each build of blooket, so make sure this is taken from the same build as the build id below
 	//To find it, either search for '(new TextEncoder)' or set a breakpoint on the standard library function btoa (redefine it with a wrapper function that calls the debugger and then the real btoa function) and then scroll up a bit
-	let keybytes = (new TextEncoder).encode("sI6ZwhqjSmlWBP2dw6GAK9GbeY4RmPwL");
+	let keybytes = (new TextEncoder).encode("6l3jj1Ibxfec2ZX3qVhcrOs6Z9Xeypw5");
 	let digest = await window.crypto.subtle.digest("SHA-256", keybytes);
 
 	let key = await window.crypto.subtle.importKey("raw", digest, {
@@ -125,7 +105,7 @@ export async function addTokens() {
 		//I dont know if this will become invalid in future
 		//To find a more recent one, look at the request headers of the network request send on opening a box
 		//The current build id should be on the same line
-			"X-Blooket-Build": "d3522079-0ea2-4a08-b810-4e50b0d12a16"
+			"X-Blooket-Build": "f385bfe9-ff6f-44db-b912-715a3b42c80b"
 		},
 		credentials: "include",
 		body: payloadBase64
