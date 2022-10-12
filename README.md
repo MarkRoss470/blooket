@@ -4,11 +4,11 @@
 
 This extension is not currently available on Chrome Web Store, so this repo is the only way to download it.
 To install:
-* clone the repo
-* go to chrome://extensions
+* clone the repo (or go to 'code' above the list of files, then download ZIP and extract it)
+* go to chrome://extensions in your browser (tested in chrome, probably works in chromium based browsers)
 * enable developer mode
 * click 'load unpacked'
-* navigate to the cloned repo and select
+* navigate to the cloned repo or wherever you extracted your files (make sure you're in the deepest subdirectory) and select
 
 ## Usage
 
