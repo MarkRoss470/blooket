@@ -14,7 +14,7 @@ export async function addTokens() {
 	//fetches daily reward info from endpoint /api/users/bonuses
 	//used for addedTokens and addedXp fields of payload (so that the program does not request more than the quotas per day)
 	async function getRewardInfo() {
-		const response = await fetch('https://api.blooket.com/api/users/bonuses', {
+		const response = await fetch('https://play.blooket.com/api/users/bonuses', {
 			method: "GET",
 			headers: {
 				"accept": "application/json, text/plain, */*",
@@ -49,7 +49,7 @@ export async function addTokens() {
 	let payload = (new TextEncoder).encode(JSON.stringify(JSONBody));
 
 	//send request to blooket api
-	const response = await fetch('https://api.blooket.com/api/users/add-rewards', {
+	const response = await fetch('https://play.blooket.com/api/users/add-rewards', {
 		method: "PUT",
 		headers: {
 			"content-type": "application/json",
