@@ -11,9 +11,27 @@ export async function addTokens() {
 		iframe.remove();
 	}
 	
+	// Make blooket think we're starting a solo game of tower defense, so we can get an access token to be allowed to use get-rewards
+	const session_token_response = await fetch("https://play.blooket.com/api/playersessions/solo", {
+		"headers": {
+			"accept": "application/json",
+		},
+		// This question set is one called 'farm'
+		// It's already designed for farming tokens, so it should be alright to use in this extension
+		body: "{\"gameMode\":\"Defense2\",\"questionSetId\":\"62211ec298c56fd0b8de9eb7\"}",
+		method: "POST",
+		credentials: "include"
+	});
+
+	// Extract the token from the response
+	const session_token = (await session_token_response.json()).t;
+
+	console.log(session_token);
+
 	let JSONBody = {
 		addedTokens: 500,
-		addedXp: 300
+		addedXp: 300,
+		t: session_token,
 	};
 
 	let payload = (new TextEncoder).encode(JSON.stringify(JSONBody));
@@ -28,7 +46,7 @@ export async function addTokens() {
 		body: payload
 	});
 	
-	console.log(response)
+	console.log(response.json());
 
 	if(response.status != 200)
 	{
@@ -37,9 +55,7 @@ export async function addTokens() {
 	}
 	
 	// Reload page to sync changes with server
-	// This seems to be broken at the moment
 	location.reload();
-	
 };
 
 //await addTokens();
