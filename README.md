@@ -26,7 +26,3 @@ To change somebody else's blook:
 * open the extension and select a blook
 * type the username into the 'Username' field
 * click on 'Change blook'
-
-## Acknowledgments
-
-* [https://github.com/Glixerz/BlooketTokens](https://github.com/Glixerz/BlooketTokens) for the getName function and format of the fetch code. This repo does not have a licence, so I hope it is OK for me to use these functions in this way.
